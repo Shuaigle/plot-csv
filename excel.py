@@ -19,13 +19,13 @@ def main(file_path):
     ax.plot(df['StartTime'], df['Voltage'], 'o-', label='Data')
 
     # customize the x-axis labels
-    ticks = pd.date_range(df['StartTime'].min(), df['StartTime'].max(), freq='6H')
+    ticks = pd.date_range(df['StartTime'].min(), df['StartTime'].max(), freq='D')
     tick_labels = [tick.strftime('%Y/%m/%d %p %I:%M') for tick in ticks]
     plt.xticks(ticks, tick_labels)
 
     # set the plot labels and title
     ax.set_title('Power consumption')
-    ax.set_xlabel('Start Time')
+    ax.set_xlabel('Date Time')
     ax.set_ylabel('Power(V)')
     ax.legend()
 
